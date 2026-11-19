@@ -1,0 +1,198 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffe1ec, #ffb6d0, #ffd6e5);
+    overflow: hidden;
+    color: #9e315b;
+}
+
+.container {
+    width: 100%;
+    max-width: 550px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.crown {
+    font-size: 65px;
+    margin-bottom: -15px;
+    position: relative;
+    z-index: 3;
+    animation: float 2s infinite ease-in-out;
+}
+
+.card {
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(15px);
+    border: 2px solid white;
+    border-radius: 30px;
+    padding: 40px 25px;
+    box-shadow: 0 20px 60px rgba(190,70,120,0.2);
+}
+
+.main-emoji {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.small-title {
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #d36a94;
+}
+
+h1 {
+    font-size: clamp(27px, 7vw, 40px);
+    font-weight: 800;
+    margin: 15px 0 5px;
+    color: #d94d83;
+}
+
+h2 {
+    color: #ed6396;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #a45c78;
+    margin-bottom: 25px;
+}
+
+.question {
+    font-size: 20px;
+    font-weight: 700;
+    color: #c73570;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.buttons-area {
+    position: relative;
+    width: 100%;
+    height: 110px;
+    overflow: hidden;
+}
+
+button {
+    border: none;
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.yes-btn {
+    position: absolute;
+    left: 8%;
+    top: 30px;
+    background: linear-gradient(135deg, #ff4f91, #ed2672);
+    color: white;
+    box-shadow: 0 8px 20px rgba(237,38,114,0.3);
+    z-index: 2;
+    transition: transform 0.3s;
+}
+
+.yes-btn:hover {
+    transform: scale(1.1);
+}
+
+.no-btn {
+    position: absolute;
+    transition: left 0.15s ease, top 0.15s ease;
+}
+
+.hint {
+    font-size: 13px;
+    color: #c17a98;
+    margin-top: 10px;
+    min-height: 24px;
+}
+
+footer {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #a34c70;
+}
+
+/* Floating hearts */
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    pointer-events: none;
+    animation: rise linear forwards;
+    z-index: 1;
+}
+
+@keyframes rise {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+/* Success */
+
+.success-title {
+    font-size: 34px;
+    color: #e83e80;
+    margin: 15px 0;
+}
+
+.success-message {
+    color: #a45c78;
+    line-height: 2;
+    font-size: 15px;
+    margin: 20px 0;
+}
+
+.restart-btn {
+    background: #ff5b9b;
+    color: white;
+    margin-top: 15px;
+}
+
+@media(max-width: 480px) {
+    .card {
+        padding: 30px 17px;
+    }
+
+    .question {
+        font-size: 17px;
+    }
+
+    button {
+        padding: 13px 22px;
+        font-size: 14px;
+    }
+
+    .buttons-area {
+        height: 115px;
+    }
+}
